@@ -12,7 +12,7 @@ export default function NewsPage() {
   const totalPages = Math.ceil(news.length / ITEMS_PER_PAGE);
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8">
       <PageTitle>News</PageTitle>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">

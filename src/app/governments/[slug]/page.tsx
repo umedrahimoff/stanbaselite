@@ -12,7 +12,7 @@ export default async function GovernmentPage({ params }: { params: Promise<{ slu
   if (!gov) notFound();
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8">
       <PageTitle>{gov.name}</PageTitle>
       <p className="text-gray-500 mb-8">{gov.location} | {gov.type}</p>
       <DetailSection title="About">
