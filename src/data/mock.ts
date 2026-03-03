@@ -60,7 +60,7 @@ export const investors = [
   { slug: "myventures-vc", name: "MyVentures VC", investments: 1, location: "Kazakhstan, Almaty", type: "Venture Capital" },
 ];
 
-export const news = [
+const newsBase = [
   { slug: "wolt-is-leaving-uzbekistan", title: "Wolt is leaving Uzbekistan", date: "24.02.2026", views: 110 },
   { slug: "gitex-ai-central-asia-caucasus-will-take-place-in-almaty-on-may-4-5-2026", title: "GITEX AI Central Asia & Caucasus will take place in Almaty on May 4-5, 2026", date: "15.02.2026", views: 94 },
   { slug: "tajikistan-launches-area-ai-10-hub-to-export-artificial-intelligence-solutions", title: "Tajikistan Launches Area AI 1.0 Hub to Export Artificial Intelligence Solut...", date: "28.01.2026", views: 270 },
@@ -71,10 +71,18 @@ export const news = [
   { slug: "most-ventures-backs-bito-at-10m-valuation-in-new-bridge-round", title: "MOST Ventures backs BITO at $10M valuation in new bridge round", date: "25.12.2025", views: 330 },
   { slug: "qazaqstan-venture-group-invests-up-to-3m-in-most-accelerator-fund", title: "Qazaqstan Venture Group invests up to $3M in MOST Accelerator Fund", date: "24.12.2025", views: 273 },
 ];
+export const news = [
+  ...newsBase,
+  ...Array.from({ length: 51 }, (_, i) => ({
+    ...newsBase[i % newsBase.length],
+    slug: `${newsBase[i % newsBase.length].slug}-${i + 1}`,
+    views: newsBase[i % newsBase.length].views + i * 5,
+  })),
+];
 
 export const events = [
-  { id: "27", title: "Central Eurasian Venture Forum 2026 in Tashkent", date: "Friday, April 3, 2026 at 05:00 AM", format: "offline", location: "Uzbekistan - Tashkent" },
-  { id: "31", title: "GITEX AI Central Asia & Caucasus", date: "Monday, May 4, 2026 at 05:00 AM", format: "offline", location: "Kazakhstan - Atakent IEC" },
+  { id: "27", title: "Central Eurasian Venture Forum 2026 in Tashkent", date: "Friday, April 3, 2026 at 10:00 AM", format: "offline", location: "Uzbekistan - Tashkent" },
+  { id: "31", title: "GITEX AI Central Asia & Caucasus", date: "Monday, May 4, 2026 at 10:00 AM", format: "offline", location: "Kazakhstan - Atakent IEC" },
 ];
 
 export const countries = ["Tajikistan", "Uzbekistan", "Kazakhstan", "Kyrgyzstan", "Azerbaijan", "Armenia", "Georgia", "Mongolia", "Saudi Arabia", "Spain", "Turkey", "United Arab Emirates", "United Kingdom", "United States"];
@@ -111,3 +119,56 @@ export const rounds = [
   { id: "23", date: "10.12.2025", company: "Tour Stock Space", companySlug: "tour-stock-space", roundType: "Pre-Seed", investors: "FiftyFive Group", amount: "$35,000", valuation: "N/A", country: "Tajikistan" },
   { id: "24", date: "05.12.2025", company: "$ sudo teach IT", companySlug: "sudo-teach-it", roundType: "Seed", investors: "TMT Investments", amount: "$200,000", valuation: "N/A", country: "United Kingdom" },
 ];
+
+export const topInvestorsYears = ["2026", "2025", "2024", "2023"];
+
+export const topInvestors = [
+  { rank: 1, slug: "aloqaventures", name: "AloqaVentures", country: "Uzbekistan", rounds: 58, lastActivity: "09.02.2026" },
+  { rank: 2, slug: "it-park-ventures", name: "IT Park Ventures", country: "Uzbekistan", rounds: 30, lastActivity: "20.02.2026" },
+  { rank: 3, slug: "caucasus-ventures", name: "Caucasus Ventures", country: "Azerbaijan", rounds: 25, lastActivity: "04.02.2026" },
+  { rank: 4, slug: "ma7-ventures", name: "MA7 Ventures", country: "Kazakhstan", rounds: 22, lastActivity: "28.01.2026" },
+  { rank: 5, slug: "accelerate-prosperity-tajikistan", name: "Accelerate Prosperity Tajikistan", country: "Tajikistan", rounds: 18, lastActivity: "02.01.2026" },
+  { rank: 6, slug: "yoshlar-ventures", name: "Yoshlar Ventures", country: "Uzbekistan", rounds: 15, lastActivity: "Yesterday" },
+  { rank: 7, slug: "domino-ventures", name: "DOMINO Ventures", country: "Uzbekistan", rounds: 14, lastActivity: "24.02.2026" },
+  { rank: 8, slug: "battery-road-digital-holdings", name: "Battery Road Digital Holdings", country: "United Arab Emirates", rounds: 12, lastActivity: "28.12.2025" },
+  { rank: 9, slug: "startup-wise-guys", name: "Startup Wise Guys", country: "Estonia", rounds: 11, lastActivity: "15.01.2026" },
+  { rank: 10, slug: "nfx", name: "NFX", country: "United States", rounds: 10, lastActivity: "25.12.2025" },
+  { rank: 11, slug: "curiosity-vc", name: "Curiosity VC", country: "Netherlands", rounds: 9, lastActivity: "20.02.2026" },
+  { rank: 12, slug: "tetrad-vc", name: "Tetrad VC", country: "Cyprus", rounds: 8, lastActivity: "22.01.2026" },
+  { rank: 13, slug: "avlod-ventures", name: "Avlod Ventures", country: "Uzbekistan", rounds: 7, lastActivity: "25.01.2026" },
+  { rank: 14, slug: "orbit-ventures", name: "Orbit Ventures", country: "Singapore", rounds: 6, lastActivity: "10.01.2026" },
+  { rank: 15, slug: "tmt-investments", name: "TMT Investments", country: "United Kingdom", rounds: 6, lastActivity: "05.12.2025" },
+  { rank: 16, slug: "demium-capital", name: "Demium Capital", country: "Spain", rounds: 5, lastActivity: "20.01.2026" },
+  { rank: 17, slug: "presto-ventures", name: "Presto Ventures", country: "Czechia", rounds: 5, lastActivity: "20.12.2025" },
+  { rank: 18, slug: "founders-hub", name: "Founders Hub", country: "Uzbekistan", rounds: 4, lastActivity: "15.02.2026" },
+  { rank: 19, slug: "cyberpark", name: "CyberPark", country: "Uzbekistan", rounds: 4, lastActivity: "14.02.2026" },
+  { rank: 20, slug: "nexus-capital-management", name: "Nexus Capital Management", country: "Uzbekistan", rounds: 3, lastActivity: "10.02.2026" },
+  { rank: 21, slug: "x-togo-capital", name: "X-Togo Capital", country: "Uzbekistan", rounds: 3, lastActivity: "15.12.2025" },
+  { rank: 22, slug: "myventures-vc", name: "MyVentures VC", country: "Kazakhstan", rounds: 3, lastActivity: "28.01.2026" },
+  { rank: 23, slug: "fiftyfive-group", name: "FiftyFive Group", country: "Tajikistan", rounds: 2, lastActivity: "10.12.2025" },
+  { rank: 24, slug: "avenue-growth-partners", name: "Avenue Growth Partners", country: "United States", rounds: 2, lastActivity: "22.01.2026" },
+  { rank: 25, slug: "capital-mill", name: "Capital Mill", country: "Estonia", rounds: 2, lastActivity: "15.01.2026" },
+  { rank: 26, slug: "goinvest", name: "Goinvest", country: "Uzbekistan", rounds: 1, lastActivity: "22.01.2026" },
+  { rank: 27, slug: "sequoia-capital", name: "Sequoia Capital", country: "United States", rounds: 1, lastActivity: "04.02.2026" },
+  { rank: 28, slug: "cs-angels", name: "CS Angels", country: "Uzbekistan", rounds: 1, lastActivity: "01.03.2025" },
+];
+
+export const accelerators = [
+  { slug: "founders-hub", name: "Founders Hub", investments: 0, location: "Uzbekistan, Tashkent", type: "Accelerator" },
+  { slug: "accelerate-prosperity-tajikistan", name: "Accelerate Prosperity Tajikistan", investments: 1, location: "Tajikistan, Dushanbe", type: "Venture Capital, Accelerator" },
+  { slug: "orbit-ventures", name: "Orbit Ventures", investments: 1, location: "Singapore, Singapore", type: "Venture Capital, Accelerator" },
+  { slug: "digital-area", name: "Digital Area", investments: 1, location: "Georgia, Tbilisi", type: "Accelerator" },
+  { slug: "red-team-accelerator", name: "Red Team Accelerator", investments: 0, location: "Kazakhstan, Astana", type: "Accelerator" },
+  { slug: "startup-garage", name: "Startup Garage", investments: 0, location: "Uzbekistan, Tashkent", type: "Accelerator" },
+];
+
+export const governments = [
+  { slug: "high-technology-park-kyrgyzstan", name: "High Technology Park of the Kyrgyz Republic", investments: 0, location: "Kyrgyzstan, Bishkek", type: "Government Office" },
+  { slug: "it-park-dushanbe", name: "IT Park Dushanbe", investments: 0, location: "Tajikistan, Dushanbe", type: "Government Office" },
+  { slug: "it-park-uzbekistan", name: "IT Park Uzbekistan", investments: 0, location: "Uzbekistan, Tashkent", type: "Government Office" },
+  { slug: "astana-hub", name: "Astana Hub", investments: 0, location: "Kazakhstan, Astana", type: "Government Office" },
+  { slug: "gita", name: "GITA", investments: 1, location: "Georgia, Tbilisi", type: "Government Office" },
+];
+
+export const acceleratorSectors = ["Tech", "Startup", "Fintech", "EdTech", "HealthTech"];
+export const salaryRanges = ["Any salary", "$500-1000", "$1000-2000", "$2000-5000", "$5000+"];
