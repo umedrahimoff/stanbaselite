@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Button, Input, Card } from "@/components/ui";
 import { stats, partners, companies, investors, news, events } from "@/data/mock";
 
 export default function HomePage() {
@@ -14,18 +15,15 @@ export default function HomePage() {
             The most comprehensive database of startups and investors in Central Asia and the Caucasus
           </p>
           <form action="/companies" method="get" className="flex gap-2 max-w-2xl mx-auto mb-12">
-            <input
+            <Input
               type="search"
               name="q"
               placeholder="Search for startups, companies, investors, news..."
-              className="flex-1 border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:border-transparent"
+              className="flex-1 w-auto"
             />
-            <button
-              type="submit"
-              className="bg-[var(--accent)] text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition"
-            >
+            <Button type="submit" className="px-8 py-3">
               Find
-            </button>
+            </Button>
           </form>
 
           {/* Stats */}
@@ -84,23 +82,17 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {companies.slice(0, 6).map((c) => (
-              <Link
-                key={c.slug}
-                href={`/companies/${c.slug}`}
-                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition flex gap-4"
-              >
+              <Card key={c.slug} href={`/companies/${c.slug}`} className="flex gap-4">
                 <div className="w-12 h-12 rounded-lg bg-gray-200 flex-shrink-0" />
                 <div className="min-w-0 flex-1">
                   <h3 className="font-semibold text-gray-900 mb-1">{c.name}</h3>
-                  <p className="text-sm text-gray-500 mb-2">
-                    {c.industries.join(", ")}
-                  </p>
+                  <p className="text-sm text-gray-500 mb-2">{c.industries.join(", ")}</p>
                   <p className="text-sm text-gray-500 mb-2">{c.location}</p>
                   <span className="inline-block bg-[var(--accent)]/10 text-[var(--accent)] px-2 py-0.5 rounded text-xs font-medium">
                     {c.stage}
                   </span>
                 </div>
-              </Link>
+              </Card>
             ))}
           </div>
         </div>
@@ -120,18 +112,14 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {investors.slice(0, 6).map((inv) => (
-              <Link
-                key={inv.slug}
-                href={`/investors/${inv.slug}`}
-                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition flex gap-4"
-              >
+              <Card key={inv.slug} href={`/investors/${inv.slug}`} className="flex gap-4">
                 <div className="w-12 h-12 rounded-lg bg-gray-200 flex-shrink-0" />
                 <div className="min-w-0 flex-1">
                   <h3 className="font-semibold text-gray-900 mb-1">{inv.name}</h3>
                   <p className="text-sm text-gray-500 mb-1">{inv.type}</p>
                   <p className="text-sm text-gray-500">{inv.location}</p>
                 </div>
-              </Link>
+              </Card>
             ))}
           </div>
         </div>
@@ -151,11 +139,7 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {news.slice(0, 6).map((n) => (
-              <Link
-                key={n.slug}
-                href={`/news/${n.slug}`}
-                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition"
-              >
+              <Card key={n.slug} href={`/news/${n.slug}`}>
                 <h3 className="font-medium text-gray-900 mb-2 line-clamp-2">{n.title}</h3>
                 <div className="flex items-center gap-2 text-sm text-gray-500">
                   <span>{n.date}</span>
@@ -167,7 +151,7 @@ export default function HomePage() {
                     {n.views}
                   </span>
                 </div>
-              </Link>
+              </Card>
             ))}
           </div>
         </div>
@@ -187,11 +171,7 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {events.map((e) => (
-              <Link
-                key={e.id}
-                href={`/events/${e.id}`}
-                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition"
-              >
+              <Card key={e.id} href={`/events/${e.id}`}>
                 <h3 className="font-semibold text-gray-900 mb-2">{e.title}</h3>
                 <p className="text-sm text-gray-500 mb-2">{e.date}</p>
                 <div className="flex flex-wrap gap-2">
@@ -200,7 +180,7 @@ export default function HomePage() {
                   </span>
                   <span className="text-sm text-gray-500">{e.location}</span>
                 </div>
-              </Link>
+              </Card>
             ))}
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { PageTitle, Select, Card, Input } from "@/components/ui";
 import { events } from "@/data/mock";
 
 export default function EventsPage() {
@@ -19,60 +19,47 @@ export default function EventsPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Events</h1>
+      <PageTitle>Events</PageTitle>
 
-      <div className="flex flex-wrap gap-4 mb-6">
-        <select
+      <div className="flex flex-wrap items-center gap-3 mb-6">
+        <Select
           value={country}
           onChange={(e) => setCountry(e.target.value)}
-          className="border border-gray-300 rounded-lg px-3 py-2 text-sm"
-        >
-          <option>All countries</option>
-          <option>Uzbekistan</option>
-          <option>Kazakhstan</option>
-        </select>
-        <select
+          placeholder="All countries"
+          options={["Uzbekistan", "Kazakhstan"]}
+        />
+        <Select
           value={format}
           onChange={(e) => setFormat(e.target.value)}
-          className="border border-gray-300 rounded-lg px-3 py-2 text-sm"
-        >
-          <option>All formats</option>
-          <option>Offline</option>
-          <option>Online</option>
-        </select>
-        <select
+          placeholder="All formats"
+          options={["Offline", "Online"]}
+        />
+        <Select
           value={days}
           onChange={(e) => setDays(e.target.value)}
-          className="border border-gray-300 rounded-lg px-3 py-2 text-sm"
-        >
-          <option>All days</option>
-          <option>Today</option>
-          <option>Tomorrow</option>
-          <option>This week</option>
-          <option>Next week</option>
-          <option>This month</option>
-        </select>
-        <input
+          placeholder="All days"
+          options={["Today", "Tomorrow", "This week", "Next week", "This month"]}
+        />
+        <Input
           type="search"
           placeholder="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border border-gray-300 rounded-lg px-4 py-2 text-sm"
         />
       </div>
 
       <div className="space-y-4">
         {filtered.map((e) => (
-          <Link
-            key={e.id}
-            href={`/events/${e.id}`}
-            className="block bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 transition"
-          >
+          <Card key={e.id} href={`/events/${e.id}`}>
             <h3 className="font-semibold text-gray-900 mb-2">{e.title}</h3>
-            <p className="text-sm text-gray-500">
-              {e.date} | {e.format} | {e.location}
-            </p>
-          </Link>
+            <p className="text-sm text-gray-500 mb-2">{e.date}</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="inline-block bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded text-xs font-medium">
+                {e.format}
+              </span>
+              <span className="text-sm text-gray-500">{e.location}</span>
+            </div>
+          </Card>
         ))}
       </div>
     </div>
