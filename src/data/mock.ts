@@ -37,6 +37,27 @@ export const companies = [
 ];
 
 export const investors = [
+  {
+    slug: "uzvc",
+    name: "UzVC",
+    investments: 11,
+    location: "Uzbekistan, Tashkent",
+    type: "Venture Capital",
+    founded: "2020",
+    employees: "10-49",
+    website: "uzvc.uz",
+    description: "Empowering entrepreneurs and innovators by creating new opportunities",
+    fullDescription: "UzVC is a venture capital fund supported by the Ministry of Economy and Finance of Uzbekistan. The fund plans to invest $100 million by 2030 in venture companies and develop the startup ecosystem in Uzbekistan and the region.",
+    legalName: "UzVC National Venture Fund LLC",
+    email: "info@uzvc.uz",
+    linkedin: "https://linkedin.com/company/uzvc",
+    subtype: "Fund Of Funds",
+    team: [
+      { name: "Dilshod Khashimov", role: "CEO", linkedin: "https://linkedin.com" },
+      { name: "Maksud Yusupov", role: "Managing Partner", linkedin: "https://linkedin.com" },
+      { name: "Abdulaziz Teshikhojaev", role: "Managing Partner", linkedin: "https://linkedin.com" },
+    ],
+  },
   { slug: "curiosity-vc", name: "Curiosity VC", investments: 1, location: "Netherlands, Amsterdam", type: "Venture Capital" },
   { slug: "tetrad-vc", name: "Tetrad VC", investments: 1, location: "Cyprus, Limassol", type: "Venture Capital" },
   { slug: "founders-hub", name: "Founders Hub", investments: 0, location: "Uzbekistan, Tashkent", type: "Accelerator" },
@@ -70,6 +91,11 @@ const newsBase = [
   { slug: "rekreateai-secures-100000-investment-to-expand-ai-content-marketing-platform", title: "rekreate.ai secures $100,000 investment to expand AI content marketing plat...", date: "25.12.2025", views: 308 },
   { slug: "most-ventures-backs-bito-at-10m-valuation-in-new-bridge-round", title: "MOST Ventures backs BITO at $10M valuation in new bridge round", date: "25.12.2025", views: 330 },
   { slug: "qazaqstan-venture-group-invests-up-to-3m-in-most-accelerator-fund", title: "Qazaqstan Venture Group invests up to $3M in MOST Accelerator Fund", date: "24.12.2025", views: 273 },
+  { slug: "uzvc-big-sky-capital-fund", title: "Qazaqstan Venture Group and UzVC back Big Sky Capital's new fund", date: "08.12.2025", views: 156, investorSlug: "uzvc", source: "the-tech.kz" },
+  { slug: "uzvc-robosell-investment", title: "UzVC and GGD Ventures to invest 275 thousand dollars in Robosell", date: "31.10.2025", views: 89, investorSlug: "uzvc" },
+  { slug: "uzvc-techgo-investment", title: "UzVC invested $100 thousand in automated retail TechGO", date: "30.10.2025", views: 112, investorSlug: "uzvc" },
+  { slug: "uzvc-techstars-accelerator", title: "UzVC and Techstars launch accelerator program for startups in Uzbekistan", date: "08.10.2025", views: 203, investorSlug: "uzvc", source: "uzvc.uz" },
+  { slug: "uzvc-investor-of-the-year", title: "UzVC recognized as \"Investor of the Year\" at Global Startup Awards", date: "26.09.2025", views: 178, investorSlug: "uzvc" },
 ];
 export const news = [
   ...newsBase,
@@ -118,6 +144,17 @@ export const rounds = [
   { id: "22", date: "15.12.2025", company: "Stanbase", companySlug: "stanbase", roundType: "Pre-Seed", investors: "X-Togo Capital", amount: "N/A", valuation: "N/A", country: "Uzbekistan" },
   { id: "23", date: "10.12.2025", company: "Tour Stock Space", companySlug: "tour-stock-space", roundType: "Pre-Seed", investors: "FiftyFive Group", amount: "$35,000", valuation: "N/A", country: "Tajikistan" },
   { id: "24", date: "05.12.2025", company: "$ sudo teach IT", companySlug: "sudo-teach-it", roundType: "Seed", investors: "TMT Investments", amount: "$200,000", valuation: "N/A", country: "United Kingdom" },
+  { id: "25", date: "08.12.2025", company: "Big Sky Capital", companySlug: "big-sky-capital", roundType: "Seed", investors: "UzVC", amount: "N/A", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "26", date: "31.10.2025", company: "Robosell", companySlug: "robosell", roundType: "Pre-Seed", investors: "UzVC", amount: "$275,000", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "27", date: "30.10.2025", company: "TechGO", companySlug: "techgo", roundType: "Pre-Seed", investors: "UzVC", amount: "$100,000", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "28", date: "10.08.2025", company: "Startup Accelerator", companySlug: "startup-accelerator", roundType: "Seed", investors: "UzVC", amount: "N/A", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "29", date: "26.09.2025", company: "Global Awards Winner", companySlug: "global-awards", roundType: "Pre-Seed", investors: "UzVC", amount: "$50,000", valuation: "$5M", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "30", date: "15.09.2025", company: "RetailTech", companySlug: "retailtech", roundType: "Pre-Seed", investors: "UzVC", amount: "$75,000", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "31", date: "01.09.2025", company: "EdTech Startup", companySlug: "edtech-startup", roundType: "Seed", investors: "UzVC", amount: "$100,000", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "32", date: "20.08.2025", company: "Fintech App", companySlug: "fintech-app", roundType: "Pre-Seed", investors: "UzVC", amount: "$50,000", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "33", date: "05.08.2025", company: "AgriTech", companySlug: "agritech", roundType: "Pre-Seed", investors: "UzVC", amount: "$75,000", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "34", date: "15.07.2025", company: "HealthTech", companySlug: "healthtech", roundType: "Seed", investors: "UzVC", amount: "$100,000", valuation: "$5M", country: "Uzbekistan", investorSlug: "uzvc" },
+  { id: "35", date: "01.07.2025", company: "Logistics Startup", companySlug: "logistics-startup", roundType: "Pre-Seed", investors: "UzVC", amount: "$50,000", valuation: "N/A", country: "Uzbekistan", investorSlug: "uzvc" },
 ];
 
 export const topInvestorsYears = ["2026", "2025", "2024", "2023"];

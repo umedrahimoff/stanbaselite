@@ -6,6 +6,7 @@ import {
   Tag,
   SimilarCompanyCard,
   Button,
+  AvatarPlaceholder,
 } from "@/components/ui";
 
 export async function generateStaticParams() {
@@ -42,9 +43,7 @@ export default async function CompanyPage({ params }: { params: Promise<{ slug: 
           {/* Overview card */}
           <div className="bg-white p-6 rounded-xl border border-gray-200">
             <div className="flex gap-6 flex-wrap">
-              <div className="w-16 h-16 rounded-lg bg-[var(--accent)] text-white flex items-center justify-center text-lg font-bold flex-shrink-0">
-                {company.name.slice(0, 2).toUpperCase()}
-              </div>
+              <AvatarPlaceholder text={company.name} size="xl" />
               <div className="flex-1 min-w-0">
                 <h1 className="text-2xl font-bold text-gray-900 mb-1">{company.name}</h1>
                 {(c.tagline || company.description) && (

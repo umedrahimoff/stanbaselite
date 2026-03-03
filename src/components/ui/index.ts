@@ -10,3 +10,5 @@ export { EntityCell } from "./EntityCell";
 export { DetailSection } from "./DetailSection";
 export { Tag } from "./Tag";
 export { SimilarCompanyCard } from "./SimilarCompanyCard";
+export { SimilarInvestorCard } from "./SimilarInvestorCard";
+export { AvatarPlaceholder } from "./AvatarPlaceholder";

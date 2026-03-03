@@ -1,13 +1,11 @@
-import { Button } from "@/components/ui";
+import { Button, AvatarPlaceholder } from "@/components/ui";
 
 export default function AdminOrganizationPage() {
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-6">
       <div className="flex justify-between items-start mb-6">
         <div className="flex gap-4">
-          <div className="w-12 h-12 rounded-lg bg-[var(--accent)] text-white flex items-center justify-center text-lg font-bold">
-            A
-          </div>
+          <AvatarPlaceholder text="Alipos" size="lg" />
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Alipos</h1>
             <p className="text-gray-500">Pre-Seed | Uzbekistan, Samarkand</p>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AvatarPlaceholder } from "./AvatarPlaceholder";
 
 interface EntityCellProps {
   href: string;
@@ -8,7 +9,7 @@ interface EntityCellProps {
 export function EntityCell({ href, name }: EntityCellProps) {
   return (
     <Link href={href} className="flex items-center gap-3 hover:text-[var(--accent)]">
-      <div className="w-8 h-8 rounded bg-gray-200 flex-shrink-0" />
+      <AvatarPlaceholder text={name} size="sm" />
       <span className="font-medium text-gray-900">{name}</span>
     </Link>
   );

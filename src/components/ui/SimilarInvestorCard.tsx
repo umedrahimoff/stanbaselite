@@ -1,30 +1,25 @@
 import Link from "next/link";
-import { Tag } from "./Tag";
 import { AvatarPlaceholder } from "./AvatarPlaceholder";
 
-interface SimilarCompanyCardProps {
+interface SimilarInvestorCardProps {
   slug: string;
   name: string;
-  industries: string[];
+  type: string;
   location: string;
-  stage: string;
 }
 
-export function SimilarCompanyCard({ slug, name, industries, location, stage }: SimilarCompanyCardProps) {
+export function SimilarInvestorCard({ slug, name, type, location }: SimilarInvestorCardProps) {
   return (
     <Link
-      href={`/companies/${slug}`}
+      href={`/investors/${slug}`}
       className="block p-4 bg-white border border-gray-200 rounded-xl hover:border-gray-300 hover:shadow-sm transition"
     >
       <div className="flex gap-3">
-        <AvatarPlaceholder text={name} size="md" />
+        <AvatarPlaceholder text={name} size="md" variant="circle" />
         <div className="min-w-0 flex-1">
           <h3 className="font-semibold text-gray-900 truncate">{name}</h3>
-          <p className="text-xs text-gray-500 truncate">{industries.join(", ")}</p>
+          <p className="text-xs text-gray-500 truncate">{type}</p>
           <p className="text-xs text-gray-500 truncate">{location}</p>
-          <Tag variant="stage" className="mt-2">
-            {stage}
-          </Tag>
         </div>
       </div>
     </Link>

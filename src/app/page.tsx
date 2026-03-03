@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button, Input, Card } from "@/components/ui";
+import { Button, Input, Card, AvatarPlaceholder } from "@/components/ui";
 import { stats, partners, companies, investors, news, events } from "@/data/mock";
 
 export default function HomePage() {
@@ -83,7 +83,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {companies.slice(0, 6).map((c) => (
               <Card key={c.slug} href={`/companies/${c.slug}`} className="flex gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gray-200 flex-shrink-0" />
+                <AvatarPlaceholder text={c.name} size="lg" />
                 <div className="min-w-0 flex-1">
                   <h3 className="font-semibold text-gray-900 mb-1">{c.name}</h3>
                   <p className="text-sm text-gray-500 mb-2">{c.industries.join(", ")}</p>
@@ -113,7 +113,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {investors.slice(0, 6).map((inv) => (
               <Card key={inv.slug} href={`/investors/${inv.slug}`} className="flex gap-4">
-                <div className="w-12 h-12 rounded-lg bg-gray-200 flex-shrink-0" />
+                <AvatarPlaceholder text={inv.name} size="lg" />
                 <div className="min-w-0 flex-1">
                   <h3 className="font-semibold text-gray-900 mb-1">{inv.name}</h3>
                   <p className="text-sm text-gray-500 mb-1">{inv.type}</p>

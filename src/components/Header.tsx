@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AvatarPlaceholder } from "@/components/ui";
 
 export function Header() {
   const pathname = usePathname();
@@ -78,7 +79,7 @@ export function Header() {
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-              <div className="w-8 h-8 rounded-full bg-gray-200" />
+              <AvatarPlaceholder text="Admin" size="sm" variant="circle" />
             </Link>
           </div>
         </div>
